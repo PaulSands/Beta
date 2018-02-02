@@ -201,8 +201,8 @@ class myGUI(object):
         spacer1Label = Label(headerFrame, text="               ").grid(row=0,column=1)
         clockTimeLabel = Label(headerFrame, textvariable = self.clockTimeStringVar).grid(row = 0, column=2)
         spacer2Label = Label(headerFrame, text="               ").grid(row=0,column=3)
-        loadTestButton = Button(headerFrame, text="3_I164_Oct_4.str", command= lambda: \
-                              self.openWakeFile("3_I164_Oct_4.str")).grid(row=0,column=4,sticky=N)
+        loadTestButton = Button(headerFrame, text="TH_Example.dat", command= lambda: \
+                              self.openWakeFile("TH_Example.dat")).grid(row=0,column=4,sticky=N)
 
         #************** Graph Tab ******************
         self.columnFrame = Frame(self.graphTab, borderwidth=2, relief="sunken")
@@ -300,14 +300,6 @@ class myGUI(object):
         clearTHCanvasButton = Button(self.thresholdButtonFrame, text="Clear Canvas", \
                                      command = lambda: self.thresholdCanvas.delete('all')).grid(row=0,column=0,sticky=N)
 
-        PaulsButton1 = Button(self.thresholdButtonFrame, text="Paul's Button 1", \
-                                 command = lambda: self.simpletest_1()).grid(row=0,column=1,sticky=N)
-        PaulsButton2 = Button(self.thresholdButtonFrame, text="Paul's Button 2", \
-                                 command = lambda: self.simpletest_2()).grid(row=1,column=1,sticky=N)
-        PaulsButton3 = Button(self.thresholdButtonFrame, text="Paul's Button 3", \
-                                 command = lambda: self.simpletest_3()).grid(row=2,column=1,sticky=N)
-
-
 
         #************* Draw Threshold Frame ********
         self.drawThresholdFrame = Frame(self.thresholdButtonFrame, borderwidth=2, relief="sunken")
@@ -357,7 +349,7 @@ class myGUI(object):
 
     
         self.startStopFrame = Frame(self.thresholdButtonFrame, borderwidth=2, relief="sunken")
-        self.startStopFrame.grid(columnspan=2, row = 9, column = 0)
+        self.startStopFrame.grid(columnspan=2, row = 2, column = 0)
         
         self.firstPointFrame = Frame(self.startStopFrame, borderwidth=2, relief="sunken")
         self.firstPointFrame.grid(row = 0, column = 0, sticky=W)
@@ -378,7 +370,7 @@ class myGUI(object):
         cumRecButton4 = Radiobutton(self.lastPointFrame, text = "12  ", variable= self.rangeEnd, value = 11).grid(row=4,column=0)
 
         self.responseButtonFrame = Frame(self.thresholdButtonFrame, borderwidth=2, relief="sunken")
-        self.responseButtonFrame.grid(row = 50, column = 0, sticky = EW)
+        self.responseButtonFrame.grid(row = 3, column = 0, sticky = EW)
 
         self.responseCurveVar = BooleanVar(value = True)
         self.responseCurveCheckButton = Checkbutton(self.responseButtonFrame, text = "Show Response Curve", variable = self.responseCurveVar, \
@@ -392,15 +384,23 @@ class myGUI(object):
 
 
         test1Button = Button(self.thresholdButtonFrame, text="Axes examples", command= lambda: \
-                              self.testTHGraphicsDisplay_1()).grid(row=19,column=0,sticky=S)
+                              self.testTHGraphicsDisplay_1()).grid(row=4,column=0,sticky=S)
         test2Button = Button(self.thresholdButtonFrame, text="Test Pmax calc", command= lambda: \
-                              self.testTHGraphicsDisplay_2()).grid(row=20,column=0,sticky=S)
+                              self.testTHGraphicsDisplay_2()).grid(row=5,column=0,sticky=S)
         test3Button = Button(self.thresholdButtonFrame, text="Test Button 3", command= lambda: \
-                              self.testTHGraphicsDisplay_3()).grid(row=21,column=0,sticky=S)
+                              self.testTHGraphicsDisplay_3()).grid(row=6,column=0,sticky=S)
 
         self.thresholdCanvas = Canvas(self.thresholdTab, width = canvas_width, height = canvas_height)
         self.thresholdCanvas.grid(row=0,column=1)
         self.thresholdCanvas.create_text(100,10,text = "Threshold Canvas")
+
+        PaulsButton1 = Button(self.thresholdButtonFrame, text="Paul's Button 1", \
+                                 command = lambda: self.simpletest_1()).grid(row=7,column=0,sticky=N)
+        PaulsButton2 = Button(self.thresholdButtonFrame, text="Paul's Button 2", \
+                                 command = lambda: self.simpletest_2()).grid(row=8,column=0,sticky=N)
+        PaulsButton3 = Button(self.thresholdButtonFrame, text="Paul's Button 3", \
+                                 command = lambda: self.simpletest_3()).grid(row=9,column=0,sticky=N)
+
 
 
         #*************** Text Tab ******************
