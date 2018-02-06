@@ -300,12 +300,12 @@ class myGUI(object):
         clearTHCanvasButton = Button(self.thresholdButtonFrame, text="Clear Canvas", \
                                      command = lambda: self.thresholdCanvas.delete('all')).grid(row=0,column=0,sticky=N)
 
-        PaulsButton1 = Button(self.thresholdButtonFrame, text="Paul's Button 1", \
-                                 command = lambda: self.simpletest_1()).grid(row=0,column=1,sticky=N)
-        PaulsButton2 = Button(self.thresholdButtonFrame, text="Paul's Button 2", \
-                                 command = lambda: self.simpletest_2()).grid(row=1,column=1,sticky=N)
-        PaulsButton3 = Button(self.thresholdButtonFrame, text="Paul's Button 3", \
-                                 command = lambda: self.simpletest_3()).grid(row=2,column=1,sticky=N)
+        #PaulsButton1 = Button(self.thresholdButtonFrame, text="Paul's Button 1", \
+                              #   command = lambda: self.simpletest_1()).grid(row=0,column=1,sticky=N)
+      #  PaulsButton2 = Button(self.thresholdButtonFrame, text="Paul's Button 2", \
+                              #   command = lambda: self.simpletest_2()).grid(row=1,column=1,sticky=N)
+      #  PaulsButton3 = Button(self.thresholdButtonFrame, text="Paul's Button 3", \
+                              #   command = lambda: self.simpletest_3()).grid(row=2,column=1,sticky=N)
 
 
 
@@ -454,17 +454,17 @@ class myGUI(object):
 
         # *************  The Controllers  **********
   
-    def simpletest_1(self):
-        label = "Paul's Label 1"
-        self.thresholdCanvas.create_text(300,100, text=label)
+   # def simpletest_1(self):
+       # label = "Paul's Label 1"
+       # self.thresholdCanvas.create_text(300,100, text=label)
 
-    def simpletest_2(self):
-        label = "Paul's Label 2"
-        self.thresholdCanvas.create_text(300,200, text=label)
+   # def simpletest_2(self):
+    #    label = "Paul's Label 2"
+     #   self.thresholdCanvas.create_text(300,200, text=label)
 
-    def simpletest_3(self):
-        label = "Paul's Label 3"
-        self.thresholdCanvas.create_text(300,300, text=label)
+   # def simpletest_3(self):
+    #    label = "Paul's Label 3"
+     #   self.thresholdCanvas.create_text(300,300, text=label)
         
     def testText1(self):
         Examples.showTextFormatExamples(self.textBox)
